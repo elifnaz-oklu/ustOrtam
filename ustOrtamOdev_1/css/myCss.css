@@ -21,60 +21,44 @@ p {
   width: 100%;
 }
 
-#content1{
+.baseView {
+   float: left;
+   border: 1px solid black;
+   position:relative;
+   padding: 20px;
+   background-color: grey;
+   width: 92%;
+   margin: 2% 4% 2% 4%;
+ }
+
+/* Box Styles */
+.box{
   font-weight: bold;
   color: black;
   font-size: 125%;
-}
-
-#content2{
-  font-weight: bold;
-  color: white;
-  font-size: 125%;
-}
-
-/* Box Styles */
-#box1{
   border: 1px solid black;
+  width: 125px;
+  height: 30px;
+  position:absolute;
+  top:0px;
+  right:0px;
+  text-align: center;
+}
+
+#title1{
   background-color:orange;
-  width: 125px;
-  height: 30px;
-  position:absolute;
-  top:0px;
-  right:0px;
-  text-align: center;
 }
-#box2{
-  border: 1px solid black;
+
+#title2{
   background-color:red;
-  width: 125px;
-  height: 30px;
-  position:absolute;
-  top:0px;
-  right:0px;
-  text-align: center;
+  color: white;
 }
-#box3{
-  border: 1px solid black;
+#title3{
   background-color:olive;
-  width: 125px;
-  height: 30px;
-  position:absolute;
-  top:0px;
-  right:0px;
-  text-align: center;
 }
 
 /********** Desktop View **********/
 @media (min-width: 992px) {
-  .col-lg-1, .col-lg-2, .col-lg-3 {
-    float: left;
-    border: 1px solid black;
-    position:relative;
-    padding: 20px;
-    background-color: grey;
-  }
-
   .col-lg-1 {
     width: 28%;
     margin: 4% 2% 4% 4%;
@@ -94,13 +78,6 @@ p {
 
 /********** Tablet View **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  .col-md-1, .col-md-2, .col-md-3 {
-    float: left;
-    border: 1px solid black;
-    position:relative;
-    padding: 20px;
-    background-color: grey;
-  }
 
   .col-md-1 {
     width: 44%;
@@ -113,34 +90,6 @@ p {
   }
 
   .col-md-3 {
-    width: 92%;
-    margin: 2% 4% 4% 4%;
-  }
-
-}
-
-
-/**********   Mobile View **********/
-@media (max-width: 767px) {
-   .col-lig-1, .col-lig-2, .col-lig-3 {
-    float: left;
-    border: 1px solid black;
-    position:relative;
-    padding: 20px;
-    background-color: grey;
-  }
-
-  .col-lig-1 {
-    width: 92%;
-    margin: 4% 4% 2% 4%;
-  }
-
-  .col-lig-2 {
-    width: 92%;
-    margin: 2% 4% 2% 4%;
-  }
-
-  .col-lig-3 {
     width: 92%;
     margin: 2% 4% 4% 4%;
   }
