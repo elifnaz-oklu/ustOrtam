@@ -9,17 +9,36 @@ function validateForm() {
   if (x == "") {
      document.getElementById('errorx').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
-   }
+  }
   var y = document.querySelector("#sayisal").value;
   if (isNaN(y) || y == "") {
      document.getElementById('errory').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
-   }
+  }
   var z = document.querySelector("#basamakli").value;
   if (isNaN(z) || z == "" || z.length < 12) {
      document.getElementById('errorz').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
-   }
+  }
+   var a = document.querySelector("#alfa").value;
+   var alphaExp = /^[a-zA-Z]+$/;
+  if ( a == "" || !alphaExp.test(a)) {
+     document.getElementById('errora').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
+     flag =false;
+  }
+
+  var b = document.querySelector("#max30").value;
+  if ( b == "" || !alphaExp.test(b) || b.length>30) {
+     document.getElementById('errorb').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
+     flag =false;
+  }
+
+  var c = document.querySelector("#uckelime").value;
+  if ( c == "" || c.split(" ").length!= 3) {
+     document.getElementById('errorc').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
+     flag =false;
+  }
+
    if(flag == false){
      return false;
    }
@@ -60,17 +79,17 @@ function validateForm() {
   <tr>
     <td>Sadece harf (a..z veya A..Z): </td>
     <td><input type="text" id="alfa"></td>
-    <td id="errors" style="width:20%"></td>
+    <td id="errora" style="width:20%"></td>
   </tr>
   <tr>
     <td>Sadece harf ve en fazla 30 uzunlukta olan string: </td>
     <td><input type="text" id="max30"></td>
-    <td id="errors" style="width:20%"></td>
+    <td id="errorb" style="width:20%"></td>
   </tr>
   <tr>
     <td>3 kelimeden oluşan string: </td>
     <td><input type="text" id="uckelime"></td>
-    <td id="errors" style="width:20%"></td>
+    <td id="errorc" style="width:20%"></td>
   </tr>
   <tr>
     <td>En az 1 büyük harf, en az 1 küçük harf, en az bir rakam ve en az 1 noktalama işareti içeren ve en az 8 uzunluğunda olan metin: </td>
