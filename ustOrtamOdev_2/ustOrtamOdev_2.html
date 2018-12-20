@@ -7,6 +7,16 @@ function validateForm() {
 
   var flag = true;
   var x = document.querySelector("#name").value;
+  var d = document.querySelector("#email").value;
+  var y = document.querySelector("#sayisal").value;
+  var re = /(\w+)\@(\w+)\.[a-zA-Z]{3}\b/;
+  var z = document.querySelector("#basamakli").value;
+  var a = document.querySelector("#alfa").value;
+  var alphaExp = /^[a-zA-Z]+$/;
+  var b = document.querySelector("#max30").value;
+  var c = document.querySelector("#uckelime").value;
+  var e = document.querySelector("#password").value;
+  
   if (x == "") {
      document.getElementById('error1').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -14,8 +24,7 @@ function validateForm() {
   else{
     document.getElementById('error1').innerHTML = '';
   }
-  var d = document.querySelector("#email").value;
-  var re = /(\w+)\@(\w+)\.[a-zA-Z]{3}\b/;
+  
   if (d == "" || !re.test(d)) {
      document.getElementById('error2').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -23,7 +32,7 @@ function validateForm() {
   else{
     document.getElementById('error2').innerHTML = '';
   }
-  var y = document.querySelector("#sayisal").value;
+  
   if (isNaN(y) || y == "") {
      document.getElementById('error3').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -31,7 +40,7 @@ function validateForm() {
   else{
     document.getElementById('error3').innerHTML = '';
   }
-  var z = document.querySelector("#basamakli").value;
+  
   if (isNaN(z) || z == "" || z.length < 12) {
      document.getElementById('error4').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -39,8 +48,7 @@ function validateForm() {
   else{
     document.getElementById('error4').innerHTML = '';
   }
-   var a = document.querySelector("#alfa").value;
-   var alphaExp = /^[a-zA-Z]+$/;
+  
   if ( a == "" || !alphaExp.test(a)) {
      document.getElementById('error5').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -49,7 +57,6 @@ function validateForm() {
     document.getElementById('error5').innerHTML = '';
   }
 
-  var b = document.querySelector("#max30").value;
   if ( b == "" || !alphaExp.test(b) || b.length>30) {
      document.getElementById('error6').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -57,8 +64,7 @@ function validateForm() {
   else{
     document.getElementById('error6').innerHTML = '';
   }
-
-  var c = document.querySelector("#uckelime").value;
+  
   if ( c == "" || c.split(" ").length!= 3) {
      document.getElementById('error7').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -67,7 +73,6 @@ function validateForm() {
     document.getElementById('error7').innerHTML = '';
   }
 
-  var e = document.querySelector("#password").value;
   if ( e == "" || e.toUpperCase() == e || e.toLowerCase()== e || !(/\d/.test(e)) || !(/[!;':",.?]/.test(e)) || e.length<8) {
      document.getElementById('error8').innerHTML="<span style='color:#FF0000'> hatalı giriş yaptınız </span>";
      flag =false;
@@ -79,7 +84,6 @@ function validateForm() {
   if(flag == false){
      return false;
   }
-
   }
 
 </script>
